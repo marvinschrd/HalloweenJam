@@ -20,17 +20,16 @@ public class PlayerCharacter : MonoBehaviour
 
     Camera cam;
 
+
     [SerializeField] float dashSpeed = 0;
-
     bool dashing = false;
-
     Vector3 dashDirection;
-
     [SerializeField] float dashTimer = 1.0f;
     float dashTime;
     TrailRenderer dashTrail;
-
     ScreenShaker screenshake;
+    int dashCount;
+    [SerializeField] int maxDashCount;
 
 
     bool isGrounded = true;
@@ -77,6 +76,10 @@ public class PlayerCharacter : MonoBehaviour
             case State.IDLE:
                 dashTrail.emitting = false;
                 direction = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
+                if(isGrounded)
+                {
+                    dashCount = 0;
+                }
                 if (isGrounded && Input.GetKeyDown("space"))
                 {
                    body.velocity = Vector2.up * jumpForce;
@@ -118,9 +121,10 @@ public class PlayerCharacter : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&&dashCount<maxDashCount)
         {
             Debug.Log("dash");
+            dashCount++;
             state = State.SELECTDASHPOSITION;
         }
         if(Input.GetMouseButtonUp(0))
