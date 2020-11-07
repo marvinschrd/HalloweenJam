@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class timer13 : MonoBehaviour
 {
+    [SerializeField] GameObject loosetext;
     float timeRemaining = 13.0f;
     bool timerIsRunning = false;
     [SerializeField] TextMeshProUGUI textMesh;
@@ -24,6 +25,7 @@ public class timer13 : MonoBehaviour
             }
             else
             {
+                loosetext.SetActive(true);
                 Debug.Log("vous avez perdu");
                 timeRemaining = 0;
                 timerIsRunning = false;
