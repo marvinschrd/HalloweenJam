@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="992d70ea-62d2-40b2-8a8e-a07ce07215d8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenJam/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenJam/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenJam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AI/AILerp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AI/AILerp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/WilliamScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WilliamScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +34,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BidenMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StopEnnemy.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -42,6 +43,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/BidenMove.cs" />
         <option value="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/TargetMover.cs" />
         <option value="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AI/AILerp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StopEnnemy.cs" />
       </list>
     </option>
   </component>
@@ -84,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604753052154</updated>
-      <workItem from="1604753058970" duration="10125000" />
+      <workItem from="1604753058970" duration="15794000" />
     </task>
     <servers />
   </component>

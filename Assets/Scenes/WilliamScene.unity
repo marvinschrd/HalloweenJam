@@ -15641,11 +15641,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  BidenCollider: {fileID: 0}
   repathRate: Infinity
   canSearch: 1
   canMove: 1
-  speed: 4
+  speed: 2
   orientation: 1
   enableRotation: 0
   rotationSpeed: 30
