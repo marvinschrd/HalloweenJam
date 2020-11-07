@@ -5,16 +5,15 @@ using UnityEngine;
 
 public class timer13 : MonoBehaviour
 {
-    float timeRemaining = 13;
+    float timeRemaining = 13.0f;
     bool timerIsRunning = false;
     [SerializeField] TextMeshProUGUI textMesh;
-    // Start is called before the first frame update
+    
     void Start()
     {
         timerIsRunning = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timerIsRunning)
@@ -31,6 +30,6 @@ public class timer13 : MonoBehaviour
             }
         }
 
-        textMesh.text = timeRemaining.ToString();
+        textMesh.text = timeRemaining.ToString("F2");
     }
 }
