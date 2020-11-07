@@ -37,7 +37,9 @@ namespace Pathfinding {
 	[RequireComponent(typeof(Seeker))]
 	[AddComponentMenu("Pathfinding/AI/AILerp (2D,3D)")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_a_i_lerp.php")]
-	public class AILerp : VersionedMonoBehaviour, IAstarAI {
+
+	public class AILerp : VersionedMonoBehaviour, IAstarAI
+	{
 		/// <summary>
 		/// Determines how often it will search for new paths.
 		/// If you have fast moving targets or AIs, you might want to set it to a lower value.
