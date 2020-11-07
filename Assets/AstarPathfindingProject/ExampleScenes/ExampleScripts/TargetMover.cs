@@ -16,6 +16,7 @@ namespace Pathfinding {
 		public LayerMask mask;
 
 		public Transform target;
+		public Transform player;
 		IAstarAI[] ais;
 
 		/// <summary>Determines if the target position should be updated every frame or only on double-click</summary>
@@ -31,19 +32,22 @@ namespace Pathfinding {
 			// FindObjectsOfType does not support interfaces unfortunately.
 			ais = FindObjectsOfType<MonoBehaviour>().OfType<IAstarAI>().ToArray();
 			useGUILayout = false;
+			target.position = player.position;
 		}
 
-		public void OnGUI () {
+		/*public void OnGUI () {
 			if (onlyOnDoubleClick && cam != null && Event.current.type == EventType.MouseDown && Event.current.clickCount == 2) {
 				UpdateTargetPosition();
 			}
-		}
+		}*/
 
 		/// <summary>Update is called once per frame</summary>
 		void Update () {
-			if (!onlyOnDoubleClick && cam != null) {
+			target.position = player.position;
+			if (/*!onlyOnDoubleClick && */cam != null) {
 				UpdateTargetPosition();
 			}
+			
 		}
 
 		public void UpdateTargetPosition () {
@@ -51,7 +55,7 @@ namespace Pathfinding {
 			bool positionFound = false;
 
 			if (use2D) {
-				newPosition = cam.ScreenToWorldPoint(Input.mousePosition);
+				newPosition = player.position;
 				newPosition.z = 0;
 				positionFound = true;
 			} else {
@@ -63,14 +67,14 @@ namespace Pathfinding {
 				}
 			}
 
-			if (positionFound && newPosition != target.position) {
+			/*if (positionFound && newPosition != target.position) {
 				target.position = newPosition;
 
-				if (onlyOnDoubleClick) {
-					for (int i = 0; i < ais.Length; i++) {
+				//if (onlyOnDoubleClick) {
+					*/for (int i = 0; i < ais.Length; i++) {
 						if (ais[i] != null) ais[i].SearchPath();
-					}
-				}
+					//}
+				//}
 			}
 		}
 	}
