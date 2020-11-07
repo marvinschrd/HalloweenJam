@@ -9,7 +9,6 @@ public class PlayerCharacter : MonoBehaviour
     Vector2 direction;
     Vector2 Jumping;
     [SerializeField] float jumpForce = 0;
-    bool canJump = false;
     bool isJumping = false;
     [SerializeField] float speed = 3;
     Animator anim;
@@ -33,6 +32,13 @@ public class PlayerCharacter : MonoBehaviour
 
     ScreenShaker screenshake;
 
+
+    bool isGrounded = true;
+    [SerializeField]Transform feetPosition;
+    [SerializeField] LayerMask whatIsGround;
+    [SerializeField] float checkRadius;
+    int jumpCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +47,8 @@ public class PlayerCharacter : MonoBehaviour
             anim = GetComponent<Animator>();
             cam = FindObjectOfType<Camera>();
             dashTrail = GetComponent<TrailRenderer>();
-        screenshake = FindObjectOfType<ScreenShaker>();
+            screenshake = FindObjectOfType<ScreenShaker>();
+        
     }
     enum State
     {
@@ -57,6 +64,7 @@ public class PlayerCharacter : MonoBehaviour
         {
         body.velocity = new Vector2(direction.x * speed, body.velocity.y);
         }
+        isGrounded = Physics2D.OverlapCircle(feetPosition.position, checkRadius, whatIsGround);
     }
     // Update is called once per frame
     void Update()
@@ -69,7 +77,7 @@ public class PlayerCharacter : MonoBehaviour
             case State.IDLE:
                 dashTrail.emitting = false;
                 direction = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
-                if (Input.GetKeyDown("space"))
+                if (isGrounded && Input.GetKeyDown("space"))
                 {
                    body.velocity = Vector2.up * jumpForce;
                 }
@@ -126,20 +134,11 @@ public class PlayerCharacter : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Player")
-        {
-            Debug.Log("canJump");
-            canJump = true;
-           // anim.SetBool("isJumping", false);
-        }
+        
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            canJump = false;
-
-        }
+       
 
     }
 
