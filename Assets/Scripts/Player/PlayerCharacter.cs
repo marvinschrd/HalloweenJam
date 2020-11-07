@@ -80,7 +80,7 @@ public class PlayerCharacter : MonoBehaviour
                 {
                     dashCount = 0;
                 }
-                if (isGrounded && Input.GetKeyDown("space"))
+                if (isGrounded && Input.GetKeyDown("w"))
                 {
                    body.velocity = Vector2.up * jumpForce;
                 }
