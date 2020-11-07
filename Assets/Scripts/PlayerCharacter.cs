@@ -53,7 +53,10 @@ public class PlayerCharacter : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(state != State.DASH)
+        {
         body.velocity = new Vector2(direction.x * speed, body.velocity.y);
+        }
     }
     // Update is called once per frame
     void Update()
@@ -68,8 +71,7 @@ public class PlayerCharacter : MonoBehaviour
                 direction = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
                 if (Input.GetKeyDown("space"))
                 {
-                    body.velocity = Vector2.up * jumpForce;
-
+                   body.velocity = Vector2.up * jumpForce;
                 }
                 break;
             case State.SELECTDASHPOSITION:
@@ -83,10 +85,13 @@ public class PlayerCharacter : MonoBehaviour
                 dashTrail.emitting = true;
                 screenshake.TriggerShake(0.1f);
                 dashTime -= Time.deltaTime;
-               transform.position = Vector3.Lerp(transform.position, dashDirection, Time.deltaTime* dashSpeed);
-                if(dashTime<=0)
+                //  transform.position = Vector3.Lerp(transform.position, dashDirection, Time.deltaTime* dashSpeed);
+                //body.velocity = Vector3.Lerp(transform.position, dashDirection, Time.deltaTime * dashSpeed);
+                body.velocity = (dashDirection - transform.position).normalized * dashSpeed;
+                if (dashTime<=0)
                 {
                     transform.position = transform.position;
+                    body.velocity = new Vector2(1f, 1f);
                     state = State.IDLE;
                 }
                 //if(Input.GetKeyDown("d"))
