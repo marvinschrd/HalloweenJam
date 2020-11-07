@@ -20,6 +20,6 @@ public class BidenMove : MonoBehaviour
     {
         bidenDirection = new Vector2( Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
         bidenBody.velocity = bidenDirection;
-        bidenPos.rotation.z = 0;
+        //bidenPos.rotation.z = 0;
     }
 }
