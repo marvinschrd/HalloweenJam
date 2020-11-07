@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="992d70ea-62d2-40b2-8a8e-a07ce07215d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenJam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/TargetMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/TargetMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AI/AILerp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AI/AILerp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WilliamScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WilliamScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +41,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BidenMove.cs" />
         <option value="$PROJECT_DIR$/Assets/AstarPathfindingProject/ExampleScenes/ExampleScripts/TargetMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AI/AILerp.cs" />
       </list>
     </option>
   </component>
@@ -82,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604753052154</updated>
-      <workItem from="1604753058970" duration="6876000" />
+      <workItem from="1604753058970" duration="10125000" />
     </task>
     <servers />
   </component>
