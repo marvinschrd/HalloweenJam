@@ -118,15 +118,15 @@ public class MandoManager : MonoBehaviour
         }
     }
     
-    /*void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.GetComponent<PlayerController>() != null && other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            animator.SetBool("canAttack", true);
+            animator.SetBool("attack", true);
             speed -= speed;
-            PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
+            /*PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
             playerController.TakeDamages(damages);
-            playerController.CheckDeath();
+            playerController.CheckDeath();*/
         }
     }
     void OnCollisionExit2D(Collision2D other)
@@ -134,9 +134,9 @@ public class MandoManager : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             speed = initialSpeed;
-            animator.SetBool("canAttack", false);
+            animator.SetBool("attack", false);
         }
-    }*/
+    }
     
     
     void OnDrawGizmos() {
