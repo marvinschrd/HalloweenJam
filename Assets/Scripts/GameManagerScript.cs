@@ -39,6 +39,7 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
+
     public void EnnemieKilled()
     {
         numberOfEnnemies--;

@@ -33,6 +33,7 @@ public class timer13 : MonoBehaviour
             else
             {
                 loosetext.SetActive(true);
+                Time.timeScale = 0;
                 Debug.Log("vous avez perdu");
                 timeRemaining = 0;
                 timerIsRunning = false;
