@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1829871472}
   - component: {fileID: 1829871473}
   - component: {fileID: 7467689729953395133}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: FireEnnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

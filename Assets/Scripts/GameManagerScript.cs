@@ -8,8 +8,7 @@ public class GameManagerScript : MonoBehaviour
     timer13 timer;
     float timerCount;
 
-   [SerializeField] GameObject[] ennemies;
-    [SerializeField] GameObject[] trapPlatforms;
+    [SerializeField] GameObject blackScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +24,7 @@ public class GameManagerScript : MonoBehaviour
         {
             playerHealth.ActiveDeath();
             timer.SetText();
+            blackScreen.SetActive(true);
         }
     }
 

@@ -9,7 +9,7 @@ public class menumanager : MonoBehaviour
     public void PlayGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void credits()
