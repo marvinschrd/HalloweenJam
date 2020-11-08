@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     Animator animator;
     Vector2 startingPosition;
     Scene currentScene;
+    Rigidbody2D body;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
         startingPosition = transform.position;
         //currentScene = SceneManager.GetActiveScene();
         health = maxHealth;
+        body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health == 0)
         {
+            Debug.Log("dead");
+            body.bodyType = RigidbodyType2D.Static;
             //scenemanager.loadscene(currentscene.name);
             ActiveDeath();
         }
@@ -38,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void ActiveDeath()
     {
+        
         animator.SetTrigger("dead");
     }
 
