@@ -18,7 +18,7 @@ public class StopEnnemy : MonoBehaviour
 
     private void Update()
     {
-        if (Vector2.Distance(BidenTrans.position, EnnemyTrans.position) < 1)
+        if (Vector2.Distance(BidenTrans.position, EnnemyTrans.position) < 1.5f)
         {
             AILerp.enabled = (false);
         }
