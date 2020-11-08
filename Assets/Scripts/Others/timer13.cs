@@ -6,6 +6,7 @@ using UnityEngine;
 public class timer13 : MonoBehaviour
 {
     [SerializeField] GameObject loosetext;
+    [SerializeField] GameObject winText;
     float timeRemaining = 13.0f;
     bool timerIsRunning = false;
     [SerializeField] TextMeshProUGUI textMesh;
@@ -21,13 +22,17 @@ public class timer13 : MonoBehaviour
     {
         if (timerIsRunning)
         {
+            if(timeRemaining >= 13.0f)
+            {
+                timeRemaining = 13.0f;
+            }
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
             }
             else
             {
-                //loosetext.SetActive(true);
+                loosetext.SetActive(true);
                 Debug.Log("vous avez perdu");
                 timeRemaining = 0;
                 timerIsRunning = false;
@@ -40,6 +45,14 @@ public class timer13 : MonoBehaviour
     public void SetText()
     {
         loosetext.SetActive(true);
+    }
+    public void SetWinText()
+    {
+        winText.SetActive(true);
+    }
+     public void AddTime()
+    {
+        timeRemaining += 3.0f;
     }
 
     public float GiveTimer()
