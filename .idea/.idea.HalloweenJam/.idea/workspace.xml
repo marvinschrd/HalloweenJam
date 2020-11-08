@@ -20,11 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="992d70ea-62d2-40b2-8a8e-a07ce07215d8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenJam/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CrawlingEnnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CrawlingEnnemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FireEnnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FireEnnemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player2.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SkullEnnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SkullEnnemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MarvinScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MarvinScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagerScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +38,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Others/DeathBackground.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ennemies/FlyingEnnemiesDetection.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -51,6 +52,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Ennemies/FlyingEnnemiesDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ennemies/StopEnnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Others/DeathBackground.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScript.cs" />
       </list>
     </option>
   </component>
@@ -94,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604753052154</updated>
       <workItem from="1604753058970" duration="15794000" />
-      <workItem from="1604841764251" duration="8116000" />
+      <workItem from="1604841764251" duration="8919000" />
     </task>
     <servers />
   </component>
