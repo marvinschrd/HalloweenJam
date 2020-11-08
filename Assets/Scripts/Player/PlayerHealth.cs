@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     {
         startingPosition = transform.position;
         currentScene = SceneManager.GetActiveScene();
+        health = maxHealth;
     }
 
     // Update is called once per frame
