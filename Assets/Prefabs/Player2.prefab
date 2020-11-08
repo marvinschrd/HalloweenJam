@@ -130,7 +130,7 @@ MonoBehaviour:
   feetPosition: {fileID: 7364156430385328238}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
   checkRadius: 0.1
 --- !u!50 &7364156430054011378
 Rigidbody2D:
@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAttackZone: {fileID: 9007979030673354492}
+  animator: {fileID: 0}
   attackDamage: 10
 --- !u!1 &7364156430385328233
 GameObject:
