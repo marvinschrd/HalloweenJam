@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7364156430054011388}
   - component: {fileID: 7364156430054011391}
   - component: {fileID: 2077698828}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8267400235520023784, guid: f1d864005dd3e1d448a3132804586233, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7364156430385328238}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FeetPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5592651641238376574}
   - component: {fileID: 1881610842}
-  m_Layer: 0
+  - component: {fileID: 419457365}
+  m_Layer: 11
   m_Name: AttackZone
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -392,3 +393,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4293984, y: 2.5332355}
   m_EdgeRadius: 0
+--- !u!114 &419457365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9007979030673354492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ceef517d146fc4e9e03ad8f60658cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10

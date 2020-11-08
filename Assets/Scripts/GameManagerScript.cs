@@ -7,6 +7,8 @@ public class GameManagerScript : MonoBehaviour
     PlayerHealth playerHealth;
     timer13 timer;
     float timerCount;
+
+    [SerializeField] GameObject blackScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class GameManagerScript : MonoBehaviour
         {
             playerHealth.ActiveDeath();
             timer.SetText();
+            blackScreen.SetActive(true);
         }
     }
 

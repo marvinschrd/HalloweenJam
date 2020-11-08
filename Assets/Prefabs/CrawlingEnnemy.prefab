@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1314253116}
   - component: {fileID: 1314253113}
   - component: {fileID: 3726755218807060728}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CrawlingEnnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
