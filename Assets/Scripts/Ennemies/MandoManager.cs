@@ -17,7 +17,7 @@ public class MandoManager : MonoBehaviour
     
     Vector3 leftTarget;
     Vector3 rightTarget;
-    AudioSource audioSource;
+    //AudioSource audioSource;
 
     [SerializeField] int damages;
 
@@ -45,7 +45,7 @@ public class MandoManager : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
 
         
         initialSpeed = speed;
@@ -108,7 +108,7 @@ public class MandoManager : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player")) {
             state = State.CHASE_PLAYER;
             targetChase = other.transform;
-            audioSource.Play();
+            //audioSource.Play();
         }
     }
     
