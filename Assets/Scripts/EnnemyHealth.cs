@@ -27,13 +27,21 @@ public class EnnemyHealth : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Attack")
-        {
-            PlayerAttack playerAttack = collision.gameObject.GetComponent<PlayerAttack>();
-            health -= playerAttack.GiveDamage();
-        }
+    //    Debug.Log("attacked");
+    //    Debug.Log(collision.gameObject.tag);
+    //    if(collision.gameObject.tag == "Attack")
+    //    {
+    //        Debug.Log("HIT");
+    //        PlayerAttack playerAttack = collision.gameObject.GetComponent<PlayerAttack>();
+    //        health -= playerAttack.GiveDamage();
+    //    }
     }
 
 }

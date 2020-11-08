@@ -7,15 +7,18 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth;
     int health;
-
+    Animator animator;
     Vector2 startingPosition;
     Scene currentScene;
+    Rigidbody2D body;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         startingPosition = transform.position;
-        currentScene = SceneManager.GetActiveScene();
+        //currentScene = SceneManager.GetActiveScene();
         health = maxHealth;
+        body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -23,7 +26,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health == 0)
         {
-            SceneManager.LoadScene(currentScene.name);
+            Debug.Log("dead");
+            body.bodyType = RigidbodyType2D.Static;
+            //scenemanager.loadscene(currentscene.name);
+            ActiveDeath();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,4 +39,16 @@ public class PlayerHealth : MonoBehaviour
             health = 0;
         }
     }
+
+    public void ActiveDeath()
+    {
+        
+        animator.SetTrigger("dead");
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
+    }
+
 }
