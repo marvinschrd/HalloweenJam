@@ -50,6 +50,7 @@ public class PlayerCharacter : MonoBehaviour
             screenshake = FindObjectOfType<ScreenShaker>();
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        dashTrail.enabled = false;
     }
     enum State
     {
@@ -70,8 +71,10 @@ public class PlayerCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y,-10);
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log(body.velocity.y);
+        animator.SetFloat("fallingSpeed", body.velocity.y);
+        animator.SetBool("isGrounded", isGrounded);
         if(body.velocity.x<0 && facingRight)
         {
             facingRight = false;
@@ -99,6 +102,7 @@ public class PlayerCharacter : MonoBehaviour
                 if (isGrounded && Input.GetKeyDown("w"))
                 {
                    body.velocity = Vector2.up * jumpForce;
+                    animator.SetTrigger("isJumping");
                 }
                 break;
             case State.SELECTDASHPOSITION:
@@ -138,13 +142,13 @@ public class PlayerCharacter : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(0)&&dashCount<maxDashCount)
+        if (Input.GetMouseButtonDown(1)&&dashCount<maxDashCount)
         {
             Debug.Log("dash");
             dashCount++;
             state = State.SELECTDASHPOSITION;
         }
-        if(Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(1))
         {
             dashing = false;
         }
