@@ -213,9 +213,11 @@
         <e p="Scripts" t="Include">
           <e p="Ennemies" t="Include">
             <e p="BidenMove.cs" t="Include" />
+            <e p="FlyingEnnemiesDetection.cs" t="Include" />
             <e p="MandoManager.cs" t="Include" />
             <e p="StopEnnemy.cs" t="Include" />
           </e>
+          <e p="EnnemyHealth.cs" t="Include" />
           <e p="Others" t="Include">
             <e p="menumanager.cs" t="Include" />
             <e p="ScreenShaker.cs" t="Include" />
