@@ -25,8 +25,6 @@ public class PlayerHealth : MonoBehaviour
         {
             SceneManager.LoadScene(currentScene.name);
         }
-        
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
