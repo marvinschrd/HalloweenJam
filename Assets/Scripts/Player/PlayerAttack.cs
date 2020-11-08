@@ -37,4 +37,9 @@ public class PlayerAttack : MonoBehaviour
     {
         playerAttackZone.SetActive(false);
     }
+
+    public int  GiveDamage()
+    {
+        return attackDamage;
+    }
 }
