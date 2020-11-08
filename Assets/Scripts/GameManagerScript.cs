@@ -7,6 +7,9 @@ public class GameManagerScript : MonoBehaviour
     PlayerHealth playerHealth;
     timer13 timer;
     float timerCount;
+
+   [SerializeField] GameObject[] ennemies;
+    [SerializeField] GameObject[] trapPlatforms;
     // Start is called before the first frame update
     void Start()
     {
