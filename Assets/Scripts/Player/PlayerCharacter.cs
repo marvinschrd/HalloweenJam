@@ -72,7 +72,6 @@ public class PlayerCharacter : MonoBehaviour
     void Update()
     {
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log(body.velocity.y);
         animator.SetFloat("fallingSpeed", body.velocity.y);
         animator.SetBool("isGrounded", isGrounded);
         if(body.velocity.x<0 && facingRight)

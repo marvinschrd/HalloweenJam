@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
 
-    [SerializeField] GameObject playerAttackZone;
-    Animator animator;
+    [SerializeField]  GameObject playerAttackZone;
+   [SerializeField] Animator animator;
     [SerializeField] int attackDamage;
     // Start is called before the first frame update
     void Start()
@@ -18,11 +18,11 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(Input.GetMouseButtonDown(0))
+        playerAttackZone.tag = "Attack";
+        //Debug.Log("attack tag" + playerAttackZone.gameObject.tag);
+        if (Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger("attacking");
-            
         }
 
 
@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void EnableAttackZone()
     {
-        playerAttackZone.SetActive(true);
+        playerAttackZone.SetActive(true); 
     }
     
     public void DiasbleAttack()

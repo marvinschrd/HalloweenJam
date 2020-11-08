@@ -9,9 +9,11 @@ public class timer13 : MonoBehaviour
     float timeRemaining = 13.0f;
     bool timerIsRunning = false;
     [SerializeField] TextMeshProUGUI textMesh;
+    GameManagerScript gameManager;
     
     void Start()
     {
+        gameManager = FindObjectOfType<GameManagerScript>();
         timerIsRunning = true;
     }
 
@@ -25,7 +27,7 @@ public class timer13 : MonoBehaviour
             }
             else
             {
-                loosetext.SetActive(true);
+                //loosetext.SetActive(true);
                 Debug.Log("vous avez perdu");
                 timeRemaining = 0;
                 timerIsRunning = false;
@@ -33,5 +35,15 @@ public class timer13 : MonoBehaviour
         }
 
         textMesh.text = timeRemaining.ToString("F2");
+    }
+
+    public void SetText()
+    {
+        loosetext.SetActive(true);
+    }
+
+    public float GiveTimer()
+    {
+        return timeRemaining;
     }
 }
