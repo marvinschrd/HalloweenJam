@@ -11,10 +11,8 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] float jumpForce = 0;
     bool isJumping = false;
     [SerializeField] float speed = 3;
-    Animator anim;
     float horizontalSpeed;
-    bool facingRight = true;
-    bool facingLeft = false;
+    
 
     Vector2 mousePosition;
 
@@ -38,16 +36,21 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] float checkRadius;
     int jumpCount = 0;
 
+    Animator animator;
+    SpriteRenderer sprite;
+    bool facingRight = true;
+    bool facingLeft = false;
     // Start is called before the first frame update
     void Start()
     {
         
             body = GetComponent<Rigidbody2D>();
-            anim = GetComponent<Animator>();
             cam = FindObjectOfType<Camera>();
             dashTrail = GetComponent<TrailRenderer>();
             screenshake = FindObjectOfType<ScreenShaker>();
-        
+        animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+        dashTrail.enabled = false;
     }
     enum State
     {
@@ -69,13 +72,29 @@ public class PlayerCharacter : MonoBehaviour
     void Update()
     {
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log(body.velocity.y);
+        animator.SetFloat("fallingSpeed", body.velocity.y);
+        animator.SetBool("isGrounded", isGrounded);
+        if(body.velocity.x<0 && facingRight)
+        {
+            facingRight = false;
+            facingLeft = true;
+            animator.transform.Rotate(0, 180, 0);
+        }
+        if (body.velocity.x >0 && facingLeft)
+        {
+            facingLeft = false;
+            facingRight = true;
+            animator.transform.Rotate(0, 180, 0);
+            
+        }
 
-
-        switch(state)
+        switch (state)
         {
             case State.IDLE:
-                dashTrail.emitting = false;
                 direction = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
+                horizontalSpeed = Input.GetAxis("Horizontal");
+                animator.SetFloat("speed", Mathf.Abs(body.velocity.x));
                 if(isGrounded)
                 {
                     dashCount = 0;
@@ -83,6 +102,7 @@ public class PlayerCharacter : MonoBehaviour
                 if (isGrounded && Input.GetKeyDown("w"))
                 {
                    body.velocity = Vector2.up * jumpForce;
+                    animator.SetTrigger("isJumping");
                 }
                 break;
             case State.SELECTDASHPOSITION:
@@ -93,16 +113,17 @@ public class PlayerCharacter : MonoBehaviour
                 state = State.DASH;
                 break;
             case State.DASH:
-                dashTrail.emitting = true;
+                dashTrail.enabled = true;
                 screenshake.TriggerShake(0.1f);
+                //animator.SetBool("isDashing", true);
+                animator.SetTrigger("dashing");
                 dashTime -= Time.deltaTime;
-                //  transform.position = Vector3.Lerp(transform.position, dashDirection, Time.deltaTime* dashSpeed);
-                //body.velocity = Vector3.Lerp(transform.position, dashDirection, Time.deltaTime * dashSpeed);
                 body.velocity = (dashDirection - transform.position).normalized * dashSpeed;
                 if (dashTime<=0)
                 {
                     transform.position = transform.position;
-                    body.velocity = new Vector2(1f, 1f);
+                    dashTrail.enabled = false;
+                    body.velocity = new Vector2(body.velocity.x, 0f);
                     state = State.IDLE;
                 }
                 //if(Input.GetKeyDown("d"))
@@ -121,19 +142,25 @@ public class PlayerCharacter : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(0)&&dashCount<maxDashCount)
+        if (Input.GetMouseButtonDown(1)&&dashCount<maxDashCount)
         {
             Debug.Log("dash");
             dashCount++;
             state = State.SELECTDASHPOSITION;
         }
-        if(Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(1))
         {
             dashing = false;
         }
 
 
         // anim.SetFloat("speed", Mathf.Abs(horizontalSpeed));
+    }
+
+
+    public void EndDashAnim()
+    {
+        animator.SetBool("isDashing", false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
